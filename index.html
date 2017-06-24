@@ -6,6 +6,8 @@
 	<title>SorceLess Home</title>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<link href="./assets/css/animate.css" type="text/css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="./assets/css/waypoints.css">
 </head>
 <body>
 
@@ -13,30 +15,35 @@
 <header>
 	<div class="row text-center">
 		<div class="col-12-lg">
-			<h1>SourceLess</h1>
+			<h1 class="os-animation" data-os-animation = "bounceInUp" data-os-animation-delay = ".1s">SourceLess</h1>
 		</div>
 	</div>
 </header>
 <section id="categories">
-	<div class="row">
+	<div class="row os-animation" data-os-animation = "fadeInRight" data-os-animation-delay = ".3s">
 		<div class="col-sm-4">
 			<p id="title">Title</p>
 		</div>
 		<div class="col-sm-4">
+		<div id="category"></div>
 		<p id="title">Title</p>
 		</div>
 		<div class="col-sm-4">
+		<div id="category"></div>
 		<p id="title">Title</p>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row os-animation" data-os-animation = "fadeInRight" data-os-animation-delay = ".4s">
 		<div class="col-sm-4">
+		<div id="category"></div>
 		<p id="title">Title</p>
 		</div>
 		<div class="col-sm-4">
+		<div id="Category"></div>
 		<p id="title">Title</p>
 		</div>
 		<div class="col-sm-4">
+		<div id="category"></div>
 		<p id="title">Title</p>
 		</div>
 	</div>
@@ -45,7 +52,7 @@
 		<div class="col-12-lg">
 		</div>
 	<footer>
-		<div class="row text-center">
+		<div class="row">
 			<div class="col-12-lg">
 				<p>@SourceLess 2017</p>
 			</div>
@@ -57,5 +64,7 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+  <script type="text/javascript" src=./assets/js/jquery.waypoints.min.js></script>
+  <script type="text/javascript" src=./assets/js/waypoints.js></script>
 </body>
 </html>
