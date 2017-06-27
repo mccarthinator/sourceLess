@@ -1,29 +1,195 @@
-			*{
-				padding:0;
-				margin:0;
-			}
-			body{
-				width: 100%;
-				padding: 0;
-				margin: 0;
-			}
-		
-			section{
-				padding-top: 100px;
-			}
-			.col-sm-4{
-				height: 300px;
-			}
 
-			.article{
-				padding-top:50px;
-			}
-			footer {
-  				position: absolute;
-  				right: 0;
-  				bottom: 0;
-  				left: 0;
-  				padding: 1rem;
-  				background-color: #efefef;
-  				text-align: center;
-			}
+
+/*Basic Setup*/
+*{
+	padding:0;
+	margin:0;
+}
+
+body{
+	width: 100%;
+	height: 1vh;
+	padding: 0;
+	margin: 0;
+	background:#fff;
+	background-repeat:no-repeat;
+	padding-bottom:50px;
+}
+.row{
+	padding-top:20px;
+}
+	
+footer {
+  	position: absolute;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	padding: 1rem;
+  	background-color: #efefef;
+  	text-align: center;
+  	margin-top: 20px;
+}
+
+/*----------Nav Bar, Links, Sign-Up DropDown-----------*/
+#logo{
+	max-height: 50px;
+	padding-bottom: 5px;
+}
+.navbar-default .navbar-nav, li, a {
+    color: #fff;
+}
+
+b{
+  color: #fff;
+}
+.navbar-default .navbar-collapse, .navbar-default{
+  border: none;
+  border-radius: none;
+  background: #262626;
+  box-shadow: 1px 3px #000;
+  border-radius: 0px;
+}
+
+.navbar-text{
+	color: #fff!important;
+}
+
+#login-dp{
+	min-width: 250px;
+	padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+
+#login-dp .help-block{
+    font-size:12px    
+}
+
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+
+#login-dp .social-buttons a{
+    width: 49%;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+
+@media(max-width:768px){
+#login-dp{
+    background-color: inherit;
+    color: #fff;
+}
+
+#login-dp .bottom{
+    background-color: inherit;
+    border-top:0 none;
+    }
+}
+
+
+/*----------Category Switch animation-----------*/
+.flip {
+  	-webkit-perspective: 800;
+  	-ms-perspective: 800;
+  	-moz-perspective: 800;
+ 	-o-perspective: 800;
+   	width:100%;
+   	height: 200px;
+   	position: relative;
+}
+
+.flip .card.flipped {
+  	transform:rotatey(-180deg);
+  	-ms-transform:rotatey(-180deg); /* IE 9 */
+  	-moz-transform:rotatey(-180deg); /* Firefox */
+  	-webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+  	-o-transform:rotatey(-180deg); /* Opera */
+}
+.flip .card {
+  	width: 100%;
+  	height: 100%;
+  	-webkit-transform-style: preserve-3d;
+  	-webkit-transition: 0.5s;
+  	-moz-transform-style: preserve-3d;
+  	-moz-transition: 0.5s;
+  	-ms-transform-style: preserve-3d;
+  	-ms-transition: 0.5s;
+  	-o-transform-style: preserve-3d;
+  	-o-transition: 0.5s;
+  	transform-style: preserve-3d;
+  	transition: 0.5s;
+}
+.flip .card .face {
+  	width: 100%;
+  	height: 100%;
+  	position: absolute;
+  	z-index: 2;
+  	font-family: Georgia;
+  	font-size: 3em;
+  	text-align: center;
+  	line-height: 200px;
+  	backface-visibility: hidden;  /* W3C */
+  	-webkit-backface-visibility: hidden; /* Safari & Chrome */
+  	-moz-backface-visibility: hidden; /* Firefox */
+  	-ms-backface-visibility: hidden; /* Internet Explorer */
+  	-o-backface-visibility: hidden; /* Opera */
+}
+.flip .card .front {
+  	position: absolute;
+  	z-index: 1;
+  	background: black;
+  	color: white;
+  	cursor: pointer;
+}
+	
+.flip .card .back {
+    background: blue;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transform:rotatey(-180deg);
+  	-ms-transform:rotatey(-180deg); /* IE 9 */
+  	-moz-transform:rotatey(-180deg); /* Firefox */
+  	-webkit-transform:rotatey(-180deg); /* Safari and Chrome */
+  	-o-transform:rotatey(-180deg); /* Opera */
+}
+
+
+
+	/*--------------Article Page ---------------*/
+	#display-articles{
+		text-align: center;
+		width: 400px;
+		height: auto;	
+	}
+    	
