@@ -30,6 +30,14 @@ footer {
   	margin-top: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 /*----------Nav Bar, Links, Sign-Up DropDown-----------*/
 #logo{
 	max-height: 50px;
