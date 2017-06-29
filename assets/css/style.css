@@ -30,6 +30,14 @@ footer {
   	margin-top: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 /*----------Nav Bar, Links, Sign-Up DropDown-----------*/
 #logo{
 	max-height: 50px;
@@ -187,9 +195,16 @@ b{
 
 
 	/*--------------Article Page ---------------*/
-	#display-articles{
+	#display-articles {
 		text-align: center;
-		width: 400px;
+		width: 100%;
 		height: auto;	
 	}
+
+  #article-text {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
     	
+  /*--------------full article page ---------------*/
+
