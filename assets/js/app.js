@@ -4,17 +4,94 @@
   return false;
 });
 
-
- window.onload = function() {
-
-
-  API_Call.NEWS_API_SOURCE_Call();
-
- 
-};
+var name = "";
+var email = "";
+var username="";
+var password="";
+var comment="";
 
 var ready=true;
 var query_type="";
+
+ // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCSy-YzBDIZYaZuljHEhzrfMNZuVm_4MYM",
+    authDomain: "newscafe-41768.firebaseapp.com",
+    databaseURL: "https://newscafe-41768.firebaseio.com",
+    projectId: "newscafe-41768",
+    storageBucket: "newscafe-41768.appspot.com",
+    messagingSenderId: "581139574984"
+  };
+
+
+  firebase.initializeApp(config);
+
+
+
+ window.onload = function() {
+
+    database.ref().on("child_added", function(childSnapshot){
+
+        $("#table_id").append("<thead><tr><th>" + childSnapshot.val().username + "</th><th>" + childSnapshot.val().comment + "</th><th></thead>");
+
+         });
+
+    API_Call.NEWS_API_SOURCE_Call();
+
+    // API_Call.Blog_API_Call();
+ 
+};
+
+
+var database = firebase.database();
+
+/*
+$("#sign_up_submit").click(function(){
+ 
+ event.preventDefault();
+
+  
+  username = $("#InputUsername").val().trim();
+  email = $("#InputEmail").val().trim();
+
+    if(username != ""){
+      //code for handling the push
+      database.ref().push({
+        username: username,
+        email: email,
+    });
+  }
+
+});
+*/
+$("#submit_verify").click(function(){
+ 
+ event.preventDefault();
+
+ // database.ref().on("child_added", function(childSnapshot){
+
+    entered_username = $("#username_id").val().trim();
+    entered_comment = $("#comment_id").val().trim();
+   
+    //lookup and verify username
+    if(entered_username !== ""){
+      
+        database.ref().push({
+        username: entered_username,
+        comment: entered_comment
+
+         });
+
+        $("#userForm").trigger("reset");
+        // document.getElementById("userForm").reset();
+    
+    }
+    else {
+            alert("Name is required for comment.")
+    }
+    
+});
+
 
 var API_Call = {
 
@@ -29,7 +106,7 @@ ProcessSourceAPI_CALL: function(response){   // Variable to store number of resu
            
             // Grab source from API
             var articleSource = response.sources[i].id;
-            console.log("SOURCE " + articleSource);
+            // console.log("SOURCE " + articleSource);
 
             API_Call.NEWS_API_Call(articleSource);
           
@@ -38,14 +115,14 @@ ProcessSourceAPI_CALL: function(response){   // Variable to store number of resu
 },
 DisplayArticle: function(response){   // Variable to store number of results
 
-    console.log("IN DisplayArticle");
-   // var numberResults = 6;
+    event.preventDefault();
+
     // Variable to hold data returned from API
     var results = response.articles;
 
     var status = response.status;
 
-    console.log(results);
+    // console.log(results);
     // Empty display div whenever new high level object is selected
     // $("#display-articles").empty();
     // forLoop to iterate through functions 10 times
@@ -54,15 +131,15 @@ DisplayArticle: function(response){   // Variable to store number of results
             var displayedArticles = $("<div>");
             // Grab title from API
             var articleTitle = results[0].title;
-            console.log("ARTICLE TITLE", articleTitle);
+           
             // Grab description from API
             var descriptionTitle = results[0].description;
-            console.log(descriptionTitle);
+            // console.log(descriptionTitle);
 
             //IMAGE Display
             
             var image = results[0].urlToImage;
-            console.log(image);
+         
                 
             // Saving the image_original_url property
             // Creating and storing an image tag
@@ -76,7 +153,7 @@ DisplayArticle: function(response){   // Variable to store number of results
             var articleURL = results[0].url;
             var articleLink = $("<a>");
             articleLink.attr('href', articleURL);
-            console.log(articleURL);
+            // console.log(articleURL);
             var pThree = articleLink.html(articleURL);
             
             
@@ -105,7 +182,6 @@ query_type = "source";
   // var article = $(this).attr("data-name");
   var queryURL = "https://newsapi.org/v1/sources?language=en&sortBy=top&apiKey=01aed6729dc84b87b67d8eca2e2a711b";
 
-  console.log(queryURL);
 
     API_Call.AJAX_CALL(queryURL, query_type);
 
@@ -115,15 +191,13 @@ query_type = "source";
 NEWS_API_Call: function(selectedSource){
 
     query_type = "article";
-    console.log("article");
-
-
+   
 // Create queryURL string
 
   // var article = $(this).attr("data-name");
   var queryURL = "https://newsapi.org/v1/articles?source=" + selectedSource + "&apiKey=01aed6729dc84b87b67d8eca2e2a711b";
 
-    console.log("IN NEWS_API_Call " + queryURL);
+    // console.log("IN NEWS_API_Call " + queryURL);
     API_Call.AJAX_CALL(queryURL, query_type);
 
 
@@ -177,7 +251,7 @@ Blog_API_Call: function(){
 
             queryURLInit = queryURL_First_Half + queryBlogID + API_Key;
 
-            var queryURL = queryURLInit.replace("news", selectedSource);
+            var queryURL = queryURLInit.replace("news", "current events");
 
             console.log("QUERY URL " + queryURL);
             return queryURL;
@@ -188,6 +262,8 @@ Blog_API_Call: function(){
                        
 },
 DisplayBlog: function(response){
+
+    event.preventDefault();
 
     var numberResults = 3;
                         
@@ -225,8 +301,8 @@ AJAX_CALL: function(queryURL, query_type){
     
     ready=true; 
 
-    console.log(ready);
-    console.log(query_type);
+    // console.log(ready);
+    // console.log(query_type);
 
     if(query_type === "blog" && ready){
 
