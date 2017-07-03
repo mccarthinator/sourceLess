@@ -74,8 +74,8 @@ $("#submit_verify").click(function(){
     entered_comment = $("#comment_id").val().trim();
    
     //lookup and verify username
-    if(entered_username !== ""){
-      
+       if(validateForm(entered_username)){
+       
         database.ref().push({
         username: entered_username,
         comment: entered_comment
@@ -87,9 +87,23 @@ $("#submit_verify").click(function(){
     
     }
     else {
-            alert("Name is required for comment.")
+            // alert("Name is required for comment.")
     }
-    
+
+    function validateForm(email) {
+
+
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if (!filter.test(email)) {
+        alert('Please provide a valid email address');
+        return false;
+        }
+        else{
+
+            return true;
+        }
+    }
 });
 
 
