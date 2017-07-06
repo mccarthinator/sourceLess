@@ -1,14 +1,10 @@
 
-  $("#category-switch").click(function(){
-  $('.flip').find(".card").toggleClass("flipped");
-  return false;
+//Arrow click animation to scroll down
+$(".arrowLink").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#wrapper").offset().top
+    }, 500);
 });
-
-var name = "";
-var email = "";
-var username="";
-var password="";
-var comment="";
 
 var ready=true;
 var query_type="";
@@ -30,11 +26,6 @@ var query_type="";
 
  window.onload = function() {
 
-    database.ref().on("child_added", function(childSnapshot){
-
-        $("#table_id").append("<thead><tr><th>" + childSnapshot.val().username + "</th><th>" + childSnapshot.val().comment + "</th><th></thead>");
-
-         });
 
     API_Call.NEWS_API_SOURCE_Call();
 
@@ -45,40 +36,22 @@ var query_type="";
 
 var database = firebase.database();
 
-/*
-$("#sign_up_submit").click(function(){
- 
- event.preventDefault();
 
-  
-  username = $("#InputUsername").val().trim();
-  email = $("#InputEmail").val().trim();
-
-    if(username != ""){
-      //code for handling the push
-      database.ref().push({
-        username: username,
-        email: email,
-    });
-  }
-
-});
-*/
 $("#submit_verify").click(function(){
  
  event.preventDefault();
 
  // database.ref().on("child_added", function(childSnapshot){
 
+    entered_email = $("#email_id").val().trim();
     entered_username = $("#username_id").val().trim();
-    entered_comment = $("#comment_id").val().trim();
    
     //lookup and verify username
-       if(validateForm(entered_username)){
+       if(validateForm(entered_email)){
        
         database.ref().push({
-        username: entered_username,
-        comment: entered_comment
+        email: entered_email,
+        username: entered_username
 
          });
 
@@ -202,20 +175,6 @@ query_type = "source";
 
 },
 
-NEWS_API_Call: function(selectedSource){
-
-    query_type = "article";
-   
-// Create queryURL string
-
-  // var article = $(this).attr("data-name");
-  var queryURL = "https://newsapi.org/v1/articles?source=" + selectedSource + "&apiKey=01aed6729dc84b87b67d8eca2e2a711b";
-
-    // console.log("IN NEWS_API_Call " + queryURL);
-    API_Call.AJAX_CALL(queryURL, query_type);
-
-
-},
 
 Blog_API_Call: function(){
 
@@ -338,3 +297,196 @@ AJAX_CALL: function(queryURL, query_type){
 },
 
 };
+
+
+//Api on load displays ten articles
+window.onload = function() {
+
+  API_Call.displayTenArticles();
+ 
+};
+
+  //Call to Api
+  var API_Call = {
+
+generateRandomSource: function(){
+
+  // Array to store all external news sources from news API
+  var allSources = ["abc-news-au", "al-jazeera-english","bbc-news", "bloomberg", "cnbc", "cnn", "google-news", "breitbart-news", "daily-mail", "reuters", "the-new-york-times", "the-wall-street-journal", "time", "the-washington-post"];
+  // Var to store randomly generated number based off of length of allSources API
+  var randomSource = Math.floor(Math.random() * allSources.length);
+  // Selected newsource generated on onload
+  var selectedSource = allSources[randomSource];
+  // Function to select random news source
+// Function to generate 10 images to DOM
+
+return selectedSource;
+
+},
+
+//Function that displays 10 articles
+displayTenArticles: function(){
+
+selectedSource = API_Call.generateRandomSource();
+  
+// API_Call.NYT_API_Call(selectedSource);
+
+API_Call.NEWS_API_Call(selectedSource); 
+
+},
+
+//Function to grab JSON data and return it
+parse_Ajax_JSON: function(response){  
+
+ // Variable to store number of results
+  var numberResults = 10;
+  // Variable to hold data returned from API
+  var results = response.articles;
+  // For loop to iterate through the json dara and Append them to #Wrapper
+for (var i = 0; i < results.length; i++) {
+  var currentObj = results[i];
+    $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="">' + currentObj.title + '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + currentObj.urlToImage + '" /><p class="description col-sm-4 pull-right">"' + currentObj.description +'</p></div></div></div></div>');
+  }
+
+
+},
+
+//Api call to get data 
+NEWS_API_Call: function(){
+
+  var article = $(this).attr("data-name");
+  var queryURL = "https://newsapi.org/v1/articles?source=" + selectedSource + "&sortBy=top&apiKey=01aed6729dc84b87b67d8eca2e2a711b"
+  // ajax call to news API
+  $.ajax({
+    url:queryURL,
+    method: 'GET',
+  }).done(function(response) {
+    console.log(response);
+
+    API_Call.parse_Ajax_JSON(response);
+  
+  });
+
+},
+
+};
+
+// $(document).ready(function() {
+
+   var placeholderText = "What's your topic?";
+   //Add placeholder text to search input.
+   $('#searchInput').val(placeholderText);
+   
+   //When search input field is clicked and field contains placeholder text, 
+   //clear search input field. N.B: .focus() doesn't work reliably here
+   $('#searchInput').click(function() { 
+      $('.pInvalidSearch').css("display", "none");
+      $('.resultsWrapper').css("display", "none");
+      $('ul').css("display", "none");
+      if ($(this).val() == placeholderText) {
+         $(this).val(" ");
+      }
+   });
+   
+   //When focus on search input field is off and input field is empty, add placeholder text and class of placeholder.
+   $('#searchInput').blur(function() {
+      if ($(this).val() == " ") {
+         $(this).val(placeholderText);
+      }
+   });
+   
+   //On button click search topic
+   $('#searchButton').click(function(e) { 
+      $('ul').empty();
+      $('.resultsWrapper').css("display", "none");
+      
+      var searchQuery = $('#searchInput').val();
+      if(searchQuery === placeholderText) {
+         $('.errMessage').html('<p class="pInvalidSearch">Please enter a topic to search.</p>');           
+      } else { 
+         getRequestedTopic(searchQuery);   
+      }          
+   });
+   
+   //On 'enter' key press trigger button click event to search topic
+   $('#searchInput').keypress(function (e) {
+      var key = e.which;
+      if(key == 13) {        
+         $('#searchButton').click();  
+      };
+   });
+   
+   //On click of "random article" link, get random article
+   $('#randomArticle').click(function() {
+      $('ul').empty();
+      $('.pInvalidSearch').css("display", "none");
+      $('.resultsWrapper').css("display", "none");
+      getRandomTopic();
+   });
+   
+   function getRequestedTopic(queryTopic) {
+      var wikiSearchUrl = "https://en.wikipedia.org/w/api.php?action=query&gsrsearch="+queryTopic+    "&generator=search&gsrnamespace=0&prop=extracts&exintro&explaintext&exsentences=2&exlimit=max&gsrlimit=10&format=json&callback=?";
+      $.getJSON(wikiSearchUrl, function(jsonObj) { 
+         var json = jsonObj.query.pages;
+         //jsonObj.hasOwnProperty("query")-- doesn't work          
+         if(jsonObj.hasOwnProperty("continue")) { 
+            displayResults(json);
+         } else {    
+             //alert(queryTopic);
+            $('.errMessage').html('<p class="pInvalidSearch">Sorry, your search was invalid. No results found.</p>');
+            $('#searchInput').val(placeholderText);
+         }    
+      }); 
+   } 
+   
+   function getRandomTopic() {
+      var wikiRandomUrl = "http://en.wikipedia.org/w/api.php?action=query&generator=random&prop=extracts&explaintext&exsentences=3&grnnamespace=0&format=json&callback=?";  
+      
+      $.getJSON(wikiRandomUrl, function(jsonObj) {         
+         var json = jsonObj.query.pages;
+         displayResults(json);
+     });
+   }
+   
+   function displayResults(json) {
+      //Clear previous search input
+      $('#searchInput').val(placeholderText);   
+   
+      var items = [];   
+      $.each(json, function(key, val) {
+         //Check for missing and invalid titles, which have unique, negative ids. 
+         //Missing and invalid titles still appear in results.
+         if (val.pageid < 0) {           
+            return 'continue';  
+         } 
+         items.push('<li><h1><a href="http://en.wikipedia.org/?curid=' + val.pageid + '" class="resultUrl" target="_blank">' + val.title + '</a></h1><p class="extract">' + val.extract + '</p></li>');
+      }); 
+      
+      //Create ul containing joined array of li items. Append to results div.
+      $('<ul/>', {  
+         'class': 'resultsList',
+          html: items.join("")     
+      }).appendTo($('#results'));
+      
+      $('.resultsWrapper').css("display", "block");
+   }
+    
+   $('.closeIcon').click(function() {
+      $('.resultsWrapper').css("display", "none");
+   });
+// }); //end document.ready()
+
+/*NOTES:
+   N.B. &callback=? (doesn't work w/JSON formatter)
+   REF: https://www.mediawiki.org/wiki/API:Search
+   gsrsearch = search topic (user input)
+   generator = search (get list of articles)
+   prop=extracts (article description)      
+   exintro&explaintext&exsentences=1 (extract intro, text, sentences)
+   exlimit=max (extract limit)    
+   &inprop=url (output full url of article)
+   Test on browser: https://en.wikipedia.org/w/api.php?action=query&gsrsearch=ancient%20rome &generator=search&gsrnamespace=0&prop=extracts&exintro&explaintext&exsentences=2&exlimit=max&gsrlimit=10&format=json
+   //Above parameters don't include article url. Create link to article: 
+   <a href="http://en.wikipedia.org/?curid=' 
+             + jsonObj.pageid + '" target="__blank" class="output">
+ */
