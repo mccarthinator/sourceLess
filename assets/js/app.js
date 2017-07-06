@@ -312,7 +312,7 @@ window.onload = function() {
 generateRandomSource: function(){
 
   // Array to store all external news sources from news API
-  var allSources = ["abc-news-au", "al-jazeera-english","bbc-news", "bloomberg", "cnbc", "cnn", "google-news", "breitbart-news", "daily-mail", "reuters", "the-new-york-times", "the-wall-street-journal", "time", "the-washington-post"];
+  var allSources = ["the-telegraph", "al-jazeera-english","bbc-news", "bloomberg", "cnbc", "cnn", "google-news", "breitbart-news", "daily-mail", "reuters", "the-new-york-times", "the-wall-street-journal", "time", "the-washington-post"];
   // Var to store randomly generated number based off of length of allSources API
   var randomSource = Math.floor(Math.random() * allSources.length);
   // Selected newsource generated on onload
