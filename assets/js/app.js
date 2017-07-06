@@ -234,34 +234,7 @@ Blog_API_Call: function(){
     }
                        
 },
-DisplayBlog: function(response){
 
-    event.preventDefault();
-
-    var numberResults = 3;
-                        
-    for (var i = 0; i < numberResults; i++) {
-
-        var displayedArticles = $("<div>");
-        // Grab title from API
-        var blogTitle = response.items[i].title;
-        console.log(blogTitle);
-        // Grab description from API
-        var blogContent = response.items[i].content;
-        // console.log(blogContent);      
-                    
-        // Paragraph to store article title
-        var pOne = $("<p>").text(blogTitle);
-        // Paragraph to store description of article
-                 
-        displayedArticles.append(pOne);
-        // displayedArticles.append(pTwo);
-                  
-        // Append to display-articles div
-        $("#display-articles").append(displayedArticles);
-        $("#blog-data").append(blogContent);
-    }
-},
 AJAX_CALL: function(queryURL, query_type){
 
     ready=false; 
@@ -345,6 +318,7 @@ parse_Ajax_JSON: function(response){
   // For loop to iterate through the json dara and Append them to #Wrapper
 for (var i = 0; i < results.length; i++) {
   var currentObj = results[i];
+  console.log(currentObj);
     $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="">' + currentObj.title + '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + currentObj.urlToImage + '" /><p class="description col-sm-4 pull-right">"' + currentObj.description +'</p></div></div></div></div>');
   }
 
@@ -364,12 +338,16 @@ NEWS_API_Call: function(){
     console.log(response);
 
     API_Call.parse_Ajax_JSON(response);
+
   
   });
 
 },
 
 };
+
+
+// Wikipedia Search ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 var placeholderText = "What's your topic?";
    //Add placeholder text to search input.
