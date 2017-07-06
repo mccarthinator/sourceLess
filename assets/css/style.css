@@ -16,7 +16,7 @@
   margin:0;
 }
 
-body{
+ body{
   width: 100%;
   padding: 0;
   margin: 0;
@@ -57,7 +57,6 @@ hr{
 section{
   margin-top: 10px;
   margin-bottom: 100px;
-  background: #000;
 }
 
 .articleSections{
@@ -104,10 +103,7 @@ a:hover{
 }
 
 /*---- Header, Hero-Image, Logo, text, and Buttons  NewsLetter Form--*/
- header{
-  background:#3544af;
 
-} 
 #logo{
   margin: 0;
 }
@@ -119,6 +115,7 @@ a:hover{
   -webkit-box-shadow: 0 7px 4px rgba(0,0,0,.8);
   -moz-box-shadow: 0 7px 4px rgba(0,0,0,.8);
   box-shadow: 0 7px 4px rgba(0,0,0,.8);
+  margin-bottom: 40px;
 }
 
 .hero-text{
@@ -137,56 +134,6 @@ p.headerText{
   padding-top: 30px;
 }
 
-.buttons{
-  padding:40px 0 40px 0;
-}
-.btn-primary{
-  width: 200px;
-  border-radius: 20px;
-  border: 1px solid #fff;
-  box-shadow: 2px 5px rgba(0,0,0,.7);
-  font-size: 20px;
-  font-family: 'aflfont';
-  background: #D9853B;
-  color: #fff;
-  font-size: 20px;
-  padding: 5px;
-}
-.btn-primary2{
-  width: 200px;
-  border-radius: 20px;
-  border: 1px solid #fff ;
-  box-shadow: 2px 5px rgba(0,0,0,.7);
-  font-size: 20px;
-  font-family: 'aflfont';
-  background: #558C89 ;
-  color: #fff;
-  padding: 5px;
-}
-.btn-primary:hover{
-  color:#fff;
-  transition: .5s ease-in;
-  background-color: #558C89;
-}
-.btn-primary2:hover{
-  color:#fff;
-  transition: .5s ease-in;
-  background-color: #D9853B;
-}
-a.btn-primary:active{
-  color: #3544af;
-  border: 2px solid #fff;
-  transition: .5s ease-in;
-  background-color: #fff;
-  box-shadow: 4px 6px rgba(0,0,0,.8);
-}
-/* Span to seperate buttons */
-span{
-  padding-right: 30px;
-  padding-left: 30px;
-  margin-top: 10px;
-}
-
 
 /* Article Nav Links and Buttons */
 a{
@@ -199,7 +146,7 @@ a{
 }
 
 a:hover{
-    color:#3544af;
+    color: #558C89;
     text-decoration: none;
 }
 
@@ -243,6 +190,8 @@ button.subscribe-submit:hover{
   transition: .5s ease-in;
   background-color: #fff;
 }
+
+
 /*-----Article Div Styling ---*/
 
 /*Div that holds Article*/
@@ -252,21 +201,22 @@ button.subscribe-submit:hover{
  -webkit-box-shadow: 0 7px 4px rgba(0,0,0,.8);
  -moz-box-shadow: 0 7px 4px rgba(0,0,0,.8);
  box-shadow: 0 7px 4px rgba(0,0,0,.8);
- height: 500px;
+ height: 460px;
  padding-top: 20px;
 
 }
-/* Size of Dynamic loaded img*/
+
+/*Size of api Images*/
 .imageSize{
-  height: 450px;
-  max-height: 450px;
+  max-height: 430px;
 }
-/*Dynamic Description*/
+
+/*Article Description*/
 p.description{
   text-align: left;
   font-size: 25px;
   color: #000;
-  line-height: 190%;
+  line-height: 150%;
   font-weight: 400;
   padding:5px;
   font-family: 'aflfont', sans-serif;
@@ -277,6 +227,7 @@ p.description{
 a.articleLink{
   padding:20px;
   font-size: 30px;
+  font-weight: 700;
   }
 
 /* Div for Dynmaic Title Container*/
@@ -285,35 +236,8 @@ a.articleLink{
   background: #fff;
   height: 110px;
   text-align: center;
-  border:2px solid #3544af;
-  padding: 15px 20px 20px 20px;
-}
-
-
-/*----------Media Queries-----------*/
-@media screen and (max-width: 790px){
-#logo{
-  width: 400px;
-    
-  }
-
-/* Size of Dynamic loaded img*/
-.imageSize{
-  height: 450px;
-  max-height: 450px;
-}
-/*Dynamic Description*/
-p.description{
-  text-align: left;
-  font-size: 25px;
-  color: #000;
-  line-height: 100%;
-  font-weight: 400;
-  padding:5px;
-  font-family: 'aflfont', sans-serif;
-}
-
-
+  border:2px solid  #558C89;
+  padding: 20px 20px 20px 20px;
 }
 
 /*---Arrow Bounce Animation*/
@@ -386,17 +310,200 @@ p.description{
 }
 
 
-	/*--------------Article Page ---------------*/
-	#display-articles {
-		text-align: center;
-		width: 100%;
-		height: auto;	
-	}
+  /*--------------Article Page ---------------*/
+  #display-articles {
+    text-align: center;
+    width: 100%;
+    height: auto; 
+  }
 
   #article-text {
     padding-left: 30px;
     padding-right: 30px;
   }
+
+
+/*----------Media Queries-----------*/
+@media screen and (max-width: 790px){
+
+.hero-image{
+  width: 100%;
+  height: 900px;
+  background: #74AFAD;
+  -webkit-box-shadow: 0 7px 4px rgba(0,0,0,.8);
+  -moz-box-shadow: 0 7px 4px rgba(0,0,0,.8);
+  box-shadow: 0 7px 4px rgba(0,0,0,.8);
+  margin-bottom: 60px;
+}
+
+.hero-text{
+  padding:80px 30px 0 30px;
+}
+
+/*Posistion of arrow*/
+.arrow {
+  position: absolute;
+  bottom: 20%;
+  left: 47%;
+  margin-left:0px;
+  width: 40px;
+  height: 40px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
+  background-size: contain;
+}
+
+#logo{
+  width: 400px;
+    
+  }
+
+/*Dynamic Description*/
+p.description{
+  text-align: center;
+  font-size: 25px;
+  color: #000;
+  line-height: 100%;
+  font-weight: 400;
+  padding:5px;
+  font-family: 'aflfont', sans-serif;
+  width: 100%;
+  padding-top: 20px;
+}
+
+/*Div that holds Article*/
+#articleImage{
+ text-align: center;
+ background:#fff;
+ -webkit-box-shadow: 0 7px 4px rgba(0,0,0,.8);
+ -moz-box-shadow: 0 7px 4px rgba(0,0,0,.8);
+ box-shadow: 0 7px 4px rgba(0,0,0,.8);
+ height: 600px;
+ padding-top: 20px;
+
+}
+}
+
+/*Cell Phone Media Queries*/
+@media screen and (max-width: 420px){
+
+/*Sourceless Logo Size*/
+  #logo{
+  width: 300px;
+    
+  }
+/*Container for Header text and submit for*/
+  .hero-text{
+  padding:15px 30px 0 30px;
+}
+
+/*Posistion of arrow*/
+.arrow {
+  position: absolute;
+  bottom: -20%;
+  left: 46%;
+  margin-left:0px;
+  width: 40px;
+  height: 40px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
+  background-size: contain;
+}
+
+/*Container for Subscribe Form*/
+section.subscribe{
+  margin-top:60px;
+  width: 100%;
+  background: #558C89;
+  height: 300px;
+  border-radius: 10px;
+   -webkit-box-shadow: 0 7px 4px rgba(0,0,0,.5);
+ -moz-box-shadow: 0 7px 4px rgba(0,0,0,.5);
+ box-shadow: 0 7px 4px rgba(0,0,0,.5);
+}
+
+/*Subscribe Email Input*/
+input{
+  width: 300px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding-right: 5px;
+  height: 40px;
+  background:#ECECEA;
+}
+
+/*Spacing of Subscribe For*/
+.subscribe-form{
+  padding-top: 10px;
+}
+
+/*Subscribe Button*/
+button.subscribe-submit{
+  color: #fff;
+  border: 2px solid #d0d0d0;
+  box-shadow: 4px 6px rgba(0,0,0,.5);
+  transition: .5s ease-in;
+  background-color: #D9853B;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 20px;
+  padding:5px;
+  margin-top: 10px;
+}
+
+/*Subcribe hover button*/
+button.subscribe-submit:hover{
+  color: #D9853B;
+  transition: .5s ease-in;
+  background-color: #fff;
+}
+
+
+/*-----Article Div Styling ---*/
+
+/*Div that holds Article*/
+#articleImage{
+ text-align: center;
+ background:#fff;
+ -webkit-box-shadow: 0 7px 4px rgba(0,0,0,.8);
+ -moz-box-shadow: 0 7px 4px rgba(0,0,0,.8);
+ box-shadow: 0 7px 4px rgba(0,0,0,.8);
+ height: 520px;
+ padding-top: 20px;
+ width: 100%;
+
+}
+
+/*Article Description*/
+p.description{
+  text-align: left;
+  font-size: 20px;
+  color: #000;
+  line-height: 130%;
+  font-weight: 400;
+  padding: 20px 5px 5px 20px;
+  font-family: 'aflfont', sans-serif;
+}
+
+
+/*Artcile link */
+a.articleLink{
+  font-size: 25px;
+  font-weight: 700;
+  width: 100%;
+  padding: 0px 0px 20px 0px;
+  margin: 0;
+
+  }
+
+/* Div for Dynmaic Title Container*/
+#title{
+  text-decoration: none;
+  background: #fff;
+  height: 180px;
+  text-align: left;
+  border:2px solid  #558C89;
+  padding: 20px 20px 20px 20px;
+}
+}
     	
-  /*--------------full article page ---------------*/
+
 
