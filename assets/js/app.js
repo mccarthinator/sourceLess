@@ -1,7 +1,9 @@
 
-  $("#category-switch").click(function(){
-  $('.flip').find(".card").toggleClass("flipped");
-  return false;
+//Arrow click animation to scroll down
+$(".arrowLink").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#wrapper").offset().top
+    }, 500);
 });
 
 var ready=true;
@@ -173,20 +175,6 @@ query_type = "source";
 
 },
 
-NEWS_API_Call: function(selectedSource){
-
-    query_type = "article";
-   
-// Create queryURL string
-
-  // var article = $(this).attr("data-name");
-  var queryURL = "https://newsapi.org/v1/articles?source=" + selectedSource + "&apiKey=01aed6729dc84b87b67d8eca2e2a711b";
-
-    // console.log("IN NEWS_API_Call " + queryURL);
-    API_Call.AJAX_CALL(queryURL, query_type);
-
-
-},
 
 Blog_API_Call: function(){
 
@@ -324,7 +312,7 @@ window.onload = function() {
 generateRandomSource: function(){
 
   // Array to store all external news sources from news API
-  var allSources = ["abc-news-au", "al-jazeera-english","bbc-news", "bloomberg", "cnbc", "cnn", "google-news", "breitbart-news", "daily-mail", "reuters", "the-guardian-uk", "the-new-york-times", "the-wall-street-journal", "time", "the-washington-post"];
+  var allSources = ["abc-news-au", "al-jazeera-english","bbc-news", "bloomberg", "cnbc", "cnn", "google-news", "breitbart-news", "daily-mail", "reuters", "the-new-york-times", "the-wall-street-journal", "time", "the-washington-post"];
   // Var to store randomly generated number based off of length of allSources API
   var randomSource = Math.floor(Math.random() * allSources.length);
   // Selected newsource generated on onload
@@ -347,7 +335,7 @@ API_Call.NEWS_API_Call(selectedSource);
 
 },
 
-//Function to grab JSON data and retur it
+//Function to grab JSON data and return it
 parse_Ajax_JSON: function(response){  
 
  // Variable to store number of results
@@ -357,7 +345,7 @@ parse_Ajax_JSON: function(response){
   // For loop to iterate through the json dara and Append them to #Wrapper
 for (var i = 0; i < results.length; i++) {
   var currentObj = results[i];
-    $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="article.html">' + currentObj.title + '</a></p><div id="articleImage"><img class="imageSize col-md-6 pull-left" src="' + currentObj.urlToImage + '" /><p class="description">"' + currentObj.description +'</p></div></div></div></div>');
+    $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="">' + currentObj.title + '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + currentObj.urlToImage + '" /><p class="description col-sm-4 pull-right">"' + currentObj.description +'</p></div></div></div></div>');
   }
 
 
