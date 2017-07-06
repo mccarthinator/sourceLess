@@ -4,12 +4,6 @@
   return false;
 });
 
-var name = "";
-var email = "";
-var username="";
-var password="";
-var comment="";
-
 var ready=true;
 var query_type="";
 
@@ -30,11 +24,6 @@ var query_type="";
 
  window.onload = function() {
 
-    database.ref().on("child_added", function(childSnapshot){
-
-        $("#table_id").append("<thead><tr><th>" + childSnapshot.val().username + "</th><th>" + childSnapshot.val().comment + "</th><th></thead>");
-
-         });
 
     API_Call.NEWS_API_SOURCE_Call();
 
@@ -45,40 +34,22 @@ var query_type="";
 
 var database = firebase.database();
 
-/*
-$("#sign_up_submit").click(function(){
- 
- event.preventDefault();
 
-  
-  username = $("#InputUsername").val().trim();
-  email = $("#InputEmail").val().trim();
-
-    if(username != ""){
-      //code for handling the push
-      database.ref().push({
-        username: username,
-        email: email,
-    });
-  }
-
-});
-*/
 $("#submit_verify").click(function(){
  
  event.preventDefault();
 
  // database.ref().on("child_added", function(childSnapshot){
 
+    entered_email = $("#email_id").val().trim();
     entered_username = $("#username_id").val().trim();
-    entered_comment = $("#comment_id").val().trim();
    
     //lookup and verify username
-       if(validateForm(entered_username)){
+       if(validateForm(entered_email)){
        
         database.ref().push({
-        username: entered_username,
-        comment: entered_comment
+        email: entered_email,
+        username: entered_username
 
          });
 
