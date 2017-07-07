@@ -317,6 +317,29 @@ a.articleLink{
   animation: bounce 2s infinite;
 }
 
+
+/*styling new source text*/
+#newSourceText {
+    color: #696969;
+    font-size: 20px;
+    font-weight: 700px;
+}
+
+/*styling new source button*/
+#newSource {
+  color: #fff;
+  border: 2px solid #d0d0d0;
+  box-shadow: 4px 6px rgba(0,0,0,.5);
+  transition: .5s ease-in;
+  background-color: #D9853B;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 20px;
+  padding:5px;
+}
+
+
+
 /*Wiki Search Container*/
 section#wiki{
   background-color: #558C89;
