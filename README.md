@@ -8,8 +8,18 @@ Tamara Tangney
 Alex Carver
 Katie McCarthy
 
-### Walking Through the App
+## Walking Through the App
 
-Here's what you see upon pageload: img/homepage-top.png
+### Here's what you see upon pageload: img/homepage-top.png
+
+### Here's where users can enter their email addresses to join our (eventual) newsletter:
+
+### Next is a button which directs users to bottom of page, where they can search wikipedia and display wikipedia results within our app:
+
+### Then, 10 trending articles which pull from newsapi are displayed to the page: (insert link to img)
+
+### Upon clicking an article title to read, the user is directed outside of our app and taken to the news source's exact article URL:
+
+
 
 
