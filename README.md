@@ -10,9 +10,9 @@ Katie McCarthy
 
 ## Walking Through the App
 
-### Here's what you see upon pageload: img/homepage-top.png
+### [Here's what you see upon pageload] (img/homepage-top.png) 
 
-### Here's where users can enter their email addresses to join our (eventual) newsletter:
+### [Here's where users can enter their email addresses to join our (eventual) newsletter] (img/newsletter.png)
 
 ### Next is a button which directs users to bottom of page, where they can search wikipedia and display wikipedia results within our app:
 
