@@ -28,8 +28,6 @@ Sourceless is a news-aggregation app that allows users to see trending topics an
 #### Wikipedia Search Functionality
 ![Alt text](wikisearch-in-use.png?raw=true)
 
-#### Upon clicking an article title to read, the user is directed outside of our app and taken to the news source's exact article URL:
-
 ## Resources Used
 * newsapi.org
 * wikipedia api
