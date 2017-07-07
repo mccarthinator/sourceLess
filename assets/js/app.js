@@ -320,7 +320,8 @@ for (var i = 0; i < results.length; i++) {
     url: '',
 }
 
-    $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="http://' + currentObj.url + '">' + currentObj.title +  '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + currentObj.urlToImage + '" /><p class="description col-sm-4 pull-right">"' + currentObj.description +'</p></div></div></div></div>');
+
+ $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="http://' + currentObj.url + '">' + currentObj.title +  '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + currentObj.urlToImage + '" /><p class="description col-sm-4 pull-right">"' + currentObj.description +'</p></div></div></div></div>');
 }
 },
 
