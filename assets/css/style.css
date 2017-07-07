@@ -10,7 +10,8 @@
   src: url('aflfont.ttf');
 }
 
-/*-----Basic Setup-------*/
+/*---------Basic Setup---------*/
+/*Reset all attributes*/
 *{
   padding:0;
   margin:0;
@@ -28,6 +29,28 @@ h1{
   padding-top:30px;
   margin:0;
 }
+
+section{
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+
+a{
+  color: #000;
+  padding: 20px;
+  margin-top: 5px;
+  font-size: 40px;
+  font-family: 'aflfont',sans-serif;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:hover{
+    color:#558C89;
+    text-decoration: none;
+}
+
 
 h1.subscribeHeading{
   font-size: 60px;
@@ -47,43 +70,14 @@ p.subscribeText{
   color: #fff;
 }
 
-hr{
-  width: 30%;
-}
-
 .articleHeader{
   margin: 20px 0 20px 0;
 }
 
-section{
-  margin-top: 10px;
-  margin-bottom: 100px;
-}
 
 .articleSections{
   height: 500px;
 }
-
-p{
-  margin:0;
-}
-
-a{
-  color: #000;
-  padding: 20px;
-  margin-top: 5px;
-  font-size: 40px;
-  font-family: 'aflfont',sans-serif;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-}
-
-a:hover{
-    color:#558C89;
-    text-decoration: none;
-}
-
 
 /*Wiki click search container*/
 .wikiContainer{
@@ -216,8 +210,10 @@ button.subscribe-submit:hover{
 }
 /* Size of Dynamic loaded img*/
 .imageSize{
-  height: 450px;
-  max-height: 450px;
+  height: 430px;
+  max-height: 430px;
+  max-width: 700px;
+  margin-left: 20px;
 }
 /*Dynamic Description*/
 p.description{
@@ -227,6 +223,7 @@ p.description{
   font-weight: 400;
   padding:5px;
   font-family: 'Roboto', sans-serif;
+  margin-right: 10px;
 }
 
 
@@ -245,6 +242,7 @@ a.articleLink{
   border:2px solid #74AFAD;
   padding: 15px 10px 20px 10px;
   width: 100%;
+  overflow:hidden;
 }
 
 /*---Arrow Bounce Animation*/
@@ -323,19 +321,24 @@ a.articleLink{
     color: #696969;
     font-size: 20px;
     font-weight: 700px;
+    margin:0px 0px 10px 0px;
+    width: 100%;
 }
 
 /*styling new source button*/
 #newSource {
   color: #fff;
   border: 2px solid #d0d0d0;
-  box-shadow: 4px 6px rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 7px 4px rgba(0,0,0,.5);
+  -moz-box-shadow: 0 7px 4px rgba(0,0,0,.5);
+  box-shadow: 0 7px 4px rgba(0,0,0,.5);
   transition: .5s ease-in;
   background-color: #D9853B;
   border-radius: 5px;
   height: 40px;
   font-size: 20px;
   padding:5px;
+  margin:5px 0px 10px 0px;
 }
 
 
@@ -463,6 +466,7 @@ p.description{
   font-family: 'Roboto',sans-serif;
   width: 100%;
   padding: 25px 15px 5px 15px;
+  margin:0;
 }
 
   #articleImage{
@@ -489,6 +493,7 @@ p.description{
   font-size: 25px;
   font-weight: 700px;
   font-family: 'Roboto', sans-serif;
+  margin-top: 55px;
 }
 
 /*Result Url Link*/
@@ -604,6 +609,7 @@ button.subscribe-submit{
   max-width: 300px;
   max-height: 200px;
   text-align: center;
+  margin:0px;
 }
 
 p#title{
