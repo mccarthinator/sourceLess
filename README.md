@@ -10,23 +10,34 @@ Sourceless is a news-aggregation app that allows users to see trending topics an
 
 ## Walking Through the App
 
-### Here's what you see upon pageload:
+#### Here's what you see upon pageload:
 ![Alt text](homepage-top.png?raw=true)
 
-### Here's where users can enter their email addresses to join our eventual newsletter:
+#### Here's where users can enter their email addresses to join our eventual newsletter:
 ![Alt text](newsletter.png?raw=true)
 
-### Next, is a button which directs users to bottom of page. If they click on it, they are taken to bottom of homepage where they can search wikipedia and display wikipedia results within our app:
+#### Next, is a button which directs users to bottom of page. If they click on it, they are taken to bottom of homepage where they can search wikipedia and display wikipedia results within our app:
 ![Alt text](arrow-button.png?raw=true)
 
-### Then, 10 trending articles which pull from newsapi are displayed to the page: (insert link to img)
+#### Then, 10 trending articles which pull from newsapi are displayed to the page:
 ![Alt text](article-display.png?raw=true)
 
-### Single article closeup
+#### Single article closeup
 ![Alt text](single-article.png?raw=true)
 
-### Wikipedia Search Functionality
+#### Wikipedia Search Functionality
 ![Alt text](wikisearch-in-use.png?raw=true)
 
-### Upon clicking an article title to read, the user is directed outside of our app and taken to the news source's exact article URL:
+#### Upon clicking an article title to read, the user is directed outside of our app and taken to the news source's exact article URL:
+
+## Resources Used
+* newsapi.org
+* wikipedia api
+* waypoints.js animations
+* firebase
+
+## Special Thanks
+* to Mark, for coming in hot but always acknowledging it.
+* to Nathan, for typing a million words a minute.
+* to Haymaker, for constant swag.
 
