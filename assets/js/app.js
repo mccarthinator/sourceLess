@@ -213,6 +213,7 @@ AJAX_CALL: function(queryURL, query_type){
     }
 
     }); 
+
 }
 
 
@@ -318,7 +319,7 @@ var placeholderText = "What's your topic?";
          if (val.pageid < 0) {           
             return 'continue';  
          } 
-         items.push('<li><h1><a href="http://en.wikipedia.org/?curid=' + val.pageid + '" class="resultUrl" target="_blank">' + val.title + '</a></h1><p class="extract">' + val.extract + '</p></li>');
+         items.push('<li><h1 class="wikiTitle"><a href="http://en.wikipedia.org/?curid=' + val.pageid + '" class="resultUrl" target="_blank">' + val.title + '</a></h1><p class="extract">' + val.extract + '</p></li>');
       }); 
       
       //Create ul containing joined array of li items. Append to results div.
