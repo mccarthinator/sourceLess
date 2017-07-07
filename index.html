@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SorceLess Home</title>
+	<title>SourceLess Home</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 	<link href="./assets/css/animate.css" type="text/css" rel="stylesheet"/>
@@ -17,7 +17,8 @@
 <div class="hero-image">
   <div class="hero-text">
     <img class="os-animation " data-os-animation = "bounceInDown" data-os-animation-delay = ".1s" id="sourcelessLogo" src="./assets/img/sourceLesslogo.png">
-    <p class="headerText os-animation" data-os-animation = "fadeInRight" data-os-animation-delay = ".2s">Moving beyond the biased opions and opening up the mind to different views!</p>
+    <p class="headerText os-animation" data-os-animation = "fadeInRight" data-os-animation-delay = ".2s">Trending news from both ends of the political spectrum</p>
+
   <section class="subscribe">
     <div class="subscribe-box os-animation" data-os-animation = "fadeInRight" data-os-animation-delay = ".2s">
       <h1 class="subscribeHeading">Subscribe</h1>
@@ -41,6 +42,31 @@
 <div class="container text-center">
 	<div id="wrapper" class="text-center os-animation" data-os-animation = "bounceInUp" data-os-animation-delay = ".0s">
 	</div><!--Wrapper, holds dynamic divs -->
+</div>
+
+<!-- Wikipedia Search -->
+
+<h1><span>wiki</span>search</h1>
+
+<div id="searchWrapper">  
+   <input id="searchInput" name="searchInput" type="text" autocomplete="off"/>
+  
+   <div id="searchButton" > 
+      <i class="fa fa-search"></i> 
+   </div>
+</div>
+
+<p class="linkWrapper">
+   <a href-"#" id="randomArticle"></a>
+</p>
+
+<div class="errMessage"></div>
+
+<div class="resultsWrapper">
+   <a class="closeIcon" href="#">
+     <i class="glyphicon glyphicon-remove"></i>
+   </a>
+   <div id="results"></div>  
 </div>
 
 <script
