@@ -37,21 +37,19 @@ var query_type="";
 var database = firebase.database();
 
 
-$("#submit_verify").click(function(){
+$("#submit_verify").click(function(event){
  
  event.preventDefault();
 
  // database.ref().on("child_added", function(childSnapshot){
 
     entered_email = $("#email_id").val().trim();
-    entered_username = $("#username_id").val().trim();
    
     //lookup and verify username
        if(validateForm(entered_email)){
        
         database.ref().push({
         email: entered_email,
-        username: entered_username
 
          });
 
