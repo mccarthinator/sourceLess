@@ -37,21 +37,19 @@ var query_type="";
 var database = firebase.database();
 
 
-$("#submit_verify").click(function(){
+$("#submit_verify").click(function(event){
  
  event.preventDefault();
 
  // database.ref().on("child_added", function(childSnapshot){
 
     entered_email = $("#email_id").val().trim();
-    entered_username = $("#username_id").val().trim();
    
     //lookup and verify username
        if(validateForm(entered_email)){
        
         database.ref().push({
         email: entered_email,
-        username: entered_username
 
          });
 
@@ -285,7 +283,7 @@ window.onload = function() {
 generateRandomSource: function(){
 
   // Array to store all external news sources from news API
-  var allSources = ["the-telegraph", "al-jazeera-english","bbc-news", "bloomberg", "cnbc", "cnn", "google-news", "breitbart-news", "daily-mail", "reuters", "the-new-york-times", "the-wall-street-journal", "time", "the-washington-post"];
+  var allSources = ["wired-de", "usa-today", "time", "the-washington-post", "the-wall-street-journal", "the-verge", "the-telegraph", "the-new-york-times", "the-hindu", "the-guardian-uk", "the-guardian-au", "the-economist", "techradar", "reuters", "newsweek", "new-scientist", "national-geographic", "mtv-news-uk", "mtv-news", "mirror", "metro", "mashable", "independent", "ign", "hacker-news", "google-news", "fortune", "focus", "financial-times", "daily-mail", "cnn", "cnbc", "buzzfeed", "business-insider-uk", "business-insider", "breitbart-news", "bloomberg", "bild", "bbc-news", "associated-press", "ars-technica", "al-jazeera-english", "abc-news-au"];
   // Var to store randomly generated number based off of length of allSources API
   var randomSource = Math.floor(Math.random() * allSources.length);
   // Selected newsource generated on onload
@@ -318,9 +316,12 @@ parse_Ajax_JSON: function(response){
   // For loop to iterate through the json dara and Append them to #Wrapper
 for (var i = 0; i < results.length; i++) {
   var currentObj = results[i];
+  var obj = {
+    url: '',
+}
 
 
- $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="'+ currentObj.url +'">' + currentObj.title +  '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + currentObj.urlToImage + '" /><p class="description col-sm-4 pull-right">"' + currentObj.description +'</p></div></div></div></div>');
+ $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="http://' + currentObj.url + '">' + currentObj.title +  '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + currentObj.urlToImage + '" /><p class="description col-sm-4 pull-right">"' + currentObj.description +'</p></div></div></div></div>');
 }
 },
 
