@@ -2,7 +2,7 @@
 //Arrow click animation to scroll down
 $(".arrowLink").click(function() {
     $('html, body').animate({
-        scrollTop: $("#wrapper").offset().top
+        scrollTop: $("#searchWrapper").offset().top
     }, 500);
 });
 
