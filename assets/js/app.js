@@ -154,7 +154,7 @@ DisplayArticle: function(response){   // Variable to store number of results
    
     var articleURL = results[0].url;
           
-    $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="http://' + articleURL + '">' + articleTitle +  '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + image + '" /><p class="description col-sm-4 pull-right">"' + descriptionTitle +'</p></div></div></div></div>');
+    $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="' + articleURL + '">' + articleTitle +  '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + image + '" /><p class="description col-sm-4 pull-right">"' + descriptionTitle +'</p></div></div></div></div>');
 
 
 },
