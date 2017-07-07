@@ -10,7 +10,7 @@ Katie McCarthy
 
 ## Walking Through the App
 
-### [Here's what you see upon pageload] (img/homepage-top.png) 
+### [Here's what you see upon pageload] (/img/homepage-top.png) 
 
 ### [Here's where users can enter their email addresses to join our (eventual) newsletter] (img/newsletter.png)
 
