@@ -313,14 +313,14 @@ parse_Ajax_JSON: function(response){
   var numberResults = 10;
   // Variable to hold data returned from API
   var results = response.articles;
-  // For loop to iterate through the json dara and Append them to #Wrapper
+  // For loop to iterate through the json data and Append them to #Wrapper
 for (var i = 0; i < results.length; i++) {
   var currentObj = results[i];
   var obj = {
     url: '',
 }
 
-    $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="http://' + currentObj.url + '">' + currentObj.title +  '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + currentObj.urlToImage + '" /><p class="description col-sm-4 pull-right">"' + currentObj.description +'</p></div></div></div></div>');
+    $('#wrapper').append('<section id="categories text-center"><div class="container"><div class="row"><div class="col-md-12"><p id="title"><a class="articleLink" href="' + currentObj.url + '">' + currentObj.title +  '</a></p><div id="articleImage"><img class="imageSize col-md-8 pull-left img-responsive" src="' + currentObj.urlToImage + '" /><p class="description col-sm-4 pull-right">"' + currentObj.description +'</p></div></div></div></div>');
 }
 },
 
@@ -434,7 +434,7 @@ var placeholderText = "What's your topic?";
          if (val.pageid < 0) {           
             return 'continue';  
          } 
-         items.push('<li><h1><a href="http://en.wikipedia.org/?curid=' + val.pageid + '" class="resultUrl" target="_blank">' + val.title + '</a></h1><p class="extract">' + val.extract + '</p></li>');
+         items.push('<li><h1 class="wikiTitle"><a href="http://en.wikipedia.org/?curid=' + val.pageid + '" class="resultUrl" target="_blank">' + val.title + '</a></h1><p class="extract">' + val.extract + '</p></li>');
       }); 
       
       //Create ul containing joined array of li items. Append to results div.
