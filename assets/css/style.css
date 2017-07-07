@@ -327,7 +327,41 @@ a.articleLink{
   animation: bounce 2s infinite;
 }
 
+/*Wiki Search Container*/
+section#wiki{
+  background-color: #558C89;
+  margin-top: 10px;
+}
 
+span.wiki{
+  color: #D9853B;
+}
+
+.wikiSearchText{
+  color: #fff;
+  font-size: 50px;
+}
+
+i{
+  color: #fff;
+}
+
+.wikiWrapper{
+  width: 100%;
+  height: auto;
+  background-color:#74AFAD ;
+}
+
+#results{
+  background:#fff;
+  width: 100%;
+}
+
+p.extract{
+  font-size: 25px;
+  padding: 10px;
+  line-height: 120%;
+}
 
 /*----------Ipad Media Queries-----------*/
 @media screen and (max-width: 768px){
