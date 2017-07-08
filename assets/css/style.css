@@ -589,9 +589,9 @@ button.subscribe-submit{
   margin-top: 30px;
 }
 
-.subscribeText{
-  text-align: center;
+p.subscribeText{
   padding:5px;
+  text-align: left;
 }
 /*Posistion of arrow*/
 .arrow {
@@ -658,6 +658,7 @@ a.articleLink{
   font-size: 25px;
   font-weight: 700px;
   font-family: 'Roboto',sans-serif;
+  text-align: left;
 }
 
 /*Result Url Link*/
@@ -706,6 +707,11 @@ p.group{
   display: inline-block;
   width: 100%;
   padding-top: 3px;
+}
+
+/*Paragraph Header*/
+p.headerText{
+  text-align: left;
 }
 }
 
