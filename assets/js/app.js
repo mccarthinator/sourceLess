@@ -283,7 +283,7 @@ window.onload = function() {
 generateRandomSource: function(){
 
   // Array to store all external news sources from news API
-  var allSources = ["wired-de", "usa-today", "time", "the-washington-post", "the-wall-street-journal", "the-verge", "the-telegraph", "the-new-york-times", "the-hindu", "the-guardian-uk", "the-guardian-au", "the-economist", "techradar", "reuters", "newsweek", "new-scientist", "national-geographic", "mtv-news-uk", "mtv-news", "mirror", "metro", "mashable", "independent", "ign", "hacker-news", "google-news", "fortune", "focus", "financial-times", "daily-mail", "cnn", "cnbc", "buzzfeed", "business-insider-uk", "business-insider", "breitbart-news", "bloomberg", "bild", "bbc-news", "associated-press", "ars-technica", "al-jazeera-english", "abc-news-au"];
+  var allSources = ["usa-today", "time", "the-washington-post", "the-wall-street-journal", "the-verge", "the-telegraph", "the-new-york-times", "the-hindu", "the-guardian-uk", "the-economist", "techradar", "reuters", "newsweek", "new-scientist", "mtv-news-uk", "mtv-news", "mirror", "metro", "mashable", "independent", "google-news", "focus", "daily-mail", "cnn", "cnbc", "business-insider-uk", "business-insider", "breitbart-news", "bloomberg", "bbc-news", "associated-press", "ars-technica", "al-jazeera-english"];
   // Var to store randomly generated number based off of length of allSources API
   var randomSource = Math.floor(Math.random() * allSources.length);
   // Selected newsource generated on onload
@@ -449,3 +449,6 @@ var placeholderText = "What's your topic?";
    $('.closeIcon').click(function() {
       $('.resultsWrapper').css("display", "none");
    });
+
+
+
