@@ -36,11 +36,12 @@ h1.subscribeHeading{
   color: #D9853B;
   margin:0;
   padding: 10px;
+
 }
 
 p.subscribeText{
   font-size: 18px;
-  font-family: 'aflfont', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   text-align: center;
   color: #fff;
@@ -79,7 +80,7 @@ a{
 }
 
 a:hover{
-    color:#74AFAD;
+    color:#558C89;
     text-decoration: none;
 }
 
@@ -94,6 +95,7 @@ a:hover{
   color: #fff;
   font-size: 25px;
   font-weight: 700px;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -146,7 +148,7 @@ a:hover{
 p.headerText{
   color: #fff;
   font-size: 25px;
-  font-family: 'aflfont', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   text-align: center;
   display: block;
@@ -157,19 +159,6 @@ p.headerText{
 
 
 /* Article Nav Links and Buttons */
-a{
-  color: #000;
-  font-size: 40px;
-  font-family: 'aflfont',sans-serif;
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-}
-
-a:hover{
-    color:#3544af;
-    text-decoration: none;
-}
 
 section.subscribe{
   margin-top:60px;
@@ -222,6 +211,7 @@ button.subscribe-submit:hover{
  box-shadow: 0 7px 4px rgba(0,0,0,.8);
  height: 500px;
  padding-top: 20px;
+ overflow: hidden;
 
 }
 /* Size of Dynamic loaded img*/
@@ -234,16 +224,15 @@ p.description{
   text-align: left;
   font-size: 25px;
   color: #000;
-  line-height: 190%;
   font-weight: 400;
   padding:5px;
-  font-family: 'aflfont', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 
 /*Artcile link */
 a.articleLink{
-  padding:20px;
+  padding:10px;
   font-size: 30px;
   }
 
@@ -253,8 +242,9 @@ a.articleLink{
   background: #fff;
   height: 110px;
   text-align: center;
-  border:2px solid #3544af;
-  padding: 15px 20px 20px 20px;
+  border:2px solid #74AFAD;
+  padding: 15px 10px 20px 10px;
+  width: 100%;
 }
 
 /*---Arrow Bounce Animation*/
@@ -327,6 +317,29 @@ a.articleLink{
   animation: bounce 2s infinite;
 }
 
+
+/*styling new source text*/
+#newSourceText {
+    color: #696969;
+    font-size: 20px;
+    font-weight: 700px;
+}
+
+/*styling new source button*/
+#newSource {
+  color: #fff;
+  border: 2px solid #d0d0d0;
+  box-shadow: 4px 6px rgba(0,0,0,.5);
+  transition: .5s ease-in;
+  background-color: #D9853B;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 20px;
+  padding:5px;
+}
+
+
+
 /*Wiki Search Container*/
 section#wiki{
   background-color: #558C89;
@@ -349,20 +362,68 @@ i{
 .wikiWrapper{
   width: 100%;
   height: auto;
-  background-color:#74AFAD ;
+  background-color:#558C89;
 }
 
-#results{
-  background:#fff;
-  width: 100%;
+/*Wikki Paragraph*/
+.wikiClick{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700px;
 }
 
+/*Result Url Link*/
+a.resultUrl{
+  font-size: 30px;
+  text-decoration: none;
+  text-align: center;
+  color:#D9853B;
+}
+
+/*Wiki Paragrpah information*/
 p.extract{
+  margin-top: 10px;
   font-size: 25px;
   padding: 10px;
   line-height: 120%;
+  font-family: 'Roboto',sans-serif;
+  text-align: left;
+  color:#000;
 }
 
+li{
+  background: #ECECEA;
+  border-bottom: 2px solid #558C89;
+}
+
+footer{
+  background:#D9853B;
+  width: 100%;
+  height: 80px;
+
+}
+
+.footerContainer{
+  width: 100%;
+  padding: 20px;
+}
+
+p.copyright{
+  font-size: 20px;
+  color:#fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  width: 100%;
+}
+
+p.group{
+  font-size: 20px;
+  color:#fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  width: 100%;
+}
 /*----------Ipad Media Queries-----------*/
 @media screen and (max-width: 768px){
 #logo{
@@ -396,10 +457,10 @@ p.description{
   text-align: left;
   font-size: 30px;
   color: #000;
-  line-height: 100%;
+  line-height: 120%;
   font-weight: 400;
   padding:5px;
-  font-family: 'aflfont', sans-serif;
+  font-family: 'Roboto',sans-serif;
   width: 100%;
   padding: 25px 15px 5px 15px;
 }
@@ -415,6 +476,44 @@ p.description{
   height: 40px;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
   background-size: contain;
+}
+
+/*Wiki click search container*/
+.wikiContainer{
+  margin-top: 10px;
+}
+
+/*Wikki Paragraph*/
+.wikiClick{
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Result Url Link*/
+a.resultUrl{
+  font-size: 30px;
+  text-decoration: none;
+  text-align: center;
+  color:#D9853B;
+  padding:0;
+}
+
+/*Wiki Paragrpah information*/
+p.extract{
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 10px;
+  line-height: 120%;
+  font-family: 'Roboto',sans-serif;
+  text-align: left;
+  color:#000;
+}
+
+li{
+  background: #ECECEA;
+    border-bottom: 2px solid #558C89;
 }
 }
 
@@ -508,8 +607,9 @@ button.subscribe-submit{
 }
 
 p#title{
-  height: 120px;
+  height: 130px;
   padding: 10px;
+  text-align: left;
 }
 
 /*Dynamic Description*/
@@ -517,7 +617,7 @@ p.description{
   text-align: left;
   font-size: 20px;
   color: #000;
-  line-height: 100%;
+  line-height: 110%;
   font-weight: 400;
   padding:5px;
   font-family: 'aflfont', sans-serif;
@@ -551,6 +651,56 @@ a.articleLink{
   color: #fff;
   font-size: 25px;
   font-weight: 700px;
+  font-family: 'Roboto',sans-serif;
+}
+
+/*Result Url Link*/
+a.resultUrl{
+  font-size: 30px;
+  text-decoration: none;
+  text-align: center;
+  color:#D9853B;
+}
+
+/*Wiki Paragrpah information*/
+p.extract{
+  margin-top: 10px;
+  font-size: 20px;
+  padding: 10px;
+  line-height: 120%;
+  font-family: 'Roboto',sans-serif;
+  text-align: left;
+  color:#000;
+}
+
+li{
+  background: #ECECEA;
+  border-bottom: 2px solid #558C89;
+}
+
+.footerContainer{
+  width: 100%;
+  padding: 5px;
+  text-align: left;
+}
+
+p.copyright{
+  font-size: 20px;
+  color:#fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  width: 100%;
+}
+
+p.group{
+  font-size: 15px;
+  color:#fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  width: 100%;
+  padding-top: 3px;
 }
 }
+
 

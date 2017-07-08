@@ -12,13 +12,14 @@
 	 <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
    <link rel="EditURI" type="application/rsd+xml" href="//www.mediawiki.org/w/api.php?action=rsd" />
         <script src="https://smtpjs.com/smtp.js"></script>
+   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 </head>
 <body id="body1">
 
 <header class="text-center">
 <div class="hero-image">
   <div class="hero-text">
-    <img class="os-animation " data-os-animation = "bounceInDown" data-os-animation-delay = ".1s" id="sourcelessLogo" src="./assets/img/sourceLesslogo.png">
+    <img class="os-animation " data-os-animation = "bounceInDown" data-os-animation-delay = ".1s" id="sourcelessLogo" src="./assets/img/sourceLesslogo2.png">
     <p class="headerText os-animation" data-os-animation = "fadeInRight" data-os-animation-delay = ".2s">Trending news from both ends of the political spectrum</p>
 
   <section class="subscribe">
@@ -32,7 +33,7 @@
     </form>
     <div class="row wikiContainer">
       <div class="col-md-12">
-      <p class="wikiClick">Click the arrow below to search on wiki, or scroll down for articles</p>
+      <p class="wikiClick os-animation" data-os-animation = "bounceInUp" data-os-animation-delay = ".3s">Click the arrow below to search on wiki, or scroll down for articles</p>
       <a class="arrowLink" href="#searchWrapper"><div class="arrow bounce"></div></a>
       </div>
       </div>
@@ -44,6 +45,10 @@
 <div class="container text-center">
 	<div id="wrapper" class="text-center os-animation" data-os-animation = "bounceInUp" data-os-animation-delay = ".0s">
   </div><!--Wrapper, holds dynamic divs -->
+</div>
+
+<div class="text-center" id="newSourceText">Want articles from a different news source? Simply click to refresh the page.  
+  <input type="button" id="newSource" value="New Source" onClick="window.location.reload()">
 </div>
 
 <!-- Wikipedia Search -->
@@ -78,7 +83,18 @@
    <div id="results"></div>  
 </div>
 </section>
+<footer>
+  <div class="row footerContainer">
+    <div class="col-md-6 pull-left">
+      <p class="copyright"> &copy; SourceLess 2017</p>
+    </div>
+    <div class="col-md-6 pull-right">
+      <p class="group">Built by: Doug, Katie, Tamara, and Alex</p>
+    </div>
+  </div>
+</footer>
 </div>
+
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
