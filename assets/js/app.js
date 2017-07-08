@@ -34,7 +34,7 @@ var query_type="";
 
 var database = firebase.database();
 
-var allSources = ["wired-de", "usa-today", "time", "the-washington-post", "the-wall-street-journal", "the-verge", "the-telegraph", "the-new-york-times", "the-hindu", "the-guardian-uk", "the-guardian-au", "the-economist", "techradar", "reuters", "newsweek", "new-scientist", "national-geographic", "mtv-news-uk", "mtv-news", "mirror", "metro", "mashable", "independent", "ign", "hacker-news", "google-news", "fortune", "focus", "financial-times", "daily-mail", "cnn", "cnbc", "buzzfeed", "business-insider-uk", "business-insider", "breitbart-news", "bloomberg", "bild", "bbc-news", "associated-press", "ars-technica", "al-jazeera-english", "abc-news-au"];
+var allSources = ["usa-today", "time", "the-washington-post", "the-wall-street-journal", "the-verge", "the-telegraph", "the-new-york-times", "the-hindu", "the-economist", "techradar", "reuters", "newsweek", "new-scientist", "mtv-news-uk", "mtv-news", "mirror", "metro", "mashable", "independent", "hacker-news", "google-news", "fortune", "financial-times", "daily-mail", "cnn", "cnbc", "business-insider-uk", "business-insider", "breitbart-news", "bloomberg", "bbc-news", "associated-press", "ars-technica", "al-jazeera-english"];
 
 $("#submit_verify").click(function(event){
  
@@ -88,7 +88,7 @@ ProcessSourceAPI_CALL: function(response){   // Variable to store number of resu
     // Variable to hold data returned from API
     // Empty display div whenever new high level object is selected
    
-    for (var i = 0; i < numberResults; i++) {
+    for (var i = 0; i < numberResults; ) {
 
       var checkedSource="";
            
@@ -101,16 +101,21 @@ ProcessSourceAPI_CALL: function(response){   // Variable to store number of resu
 
                 console.log("SOURCE " + articleSource);
 
+                checkedSource="";
+
                 checkedSource = API_Call.searchArray(articleSource, allSources);
 
                 if( checkedSource != "" ){
-                  if( checkedSource != "undefined"){
 
+                  i++;
+                
                     console.log("CHECKED SOURCE " + checkedSource);
  
-                    API_Call.NEWS_API_Call(articleSource);
-                  }
+                    API_Call.NEWS_API_Call(checkedSource);
+                }
+                else{
 
+                  console.log("NOT COMPLIANT " + i);
                 }
           
     }
@@ -118,12 +123,14 @@ ProcessSourceAPI_CALL: function(response){   // Variable to store number of resu
 },
 
 searchArray: function(articleSource, allSources){
+ 
 
     for (var i = 0; i < allSources.length; i++) {
         if (allSources[i] === articleSource) {
           return allSources[i];
         }
       }
+      return "";
 
 },
 generateRandomNumber: function(){
@@ -277,7 +284,7 @@ var placeholderText = "What's your topic?";
 
       Email.send("sourceless7@gmail.com",
       emailAddr,
-      "Articles",
+      "Welcome to Sourceless",
       "Welcome to Sourceless! \n\n      Sourceless is a news-aggregation app that allows users to see trending topics and articles from around the world (top 10 stories/events), without users being able to bias towards a particular source BEFORE reading an article.\n\nCheers from your unbiased developers,\n\nDouglas Balkin\nTamara Tangney\nAlex Carver\nKatie McCarthy (PULL MASTER)\n\n\n\ Sourceless\n https://mccarthinator.github.io/sourceLess",
       "smtp.gmail.com",
       "sourceless7@gmail.com",
