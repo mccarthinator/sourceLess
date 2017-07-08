@@ -449,3 +449,6 @@ var placeholderText = "What's your topic?";
    $('.closeIcon').click(function() {
       $('.resultsWrapper').css("display", "none");
    });
+
+
+
