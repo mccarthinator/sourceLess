@@ -103,11 +103,13 @@ ProcessSourceAPI_CALL: function(response){   // Variable to store number of resu
 
                 checkedSource = API_Call.searchArray(articleSource, allSources);
 
-                if( checkedSource != "" || "undefined"){
+                if( checkedSource != "" ){
+                  if( checkedSource != "undefined"){
 
                     console.log("CHECKED SOURCE " + checkedSource);
-
+ 
                     API_Call.NEWS_API_Call(articleSource);
+                  }
 
                 }
           
@@ -274,9 +276,9 @@ var placeholderText = "What's your topic?";
    function Send_Email (emailAddr){
 
       Email.send("sourceless7@gmail.com",
-      "tctangney@gmail.com",
+      emailAddr,
       "Articles",
-      "Welcome to Sourceless! \n\n      Sourceless is a news-aggregation app that allows users to see trending topics and articles from around the world (top 10 stories/events), without users being able to bias towards a particular source BEFORE reading an article.\n\nCheers from your unbiased developers,\n\nDouglas Balkin\nTamara Tangney\nAlex Carver\nKatie McCarthy (PULL MASTER)\n\n\n\nSourceLESS.com",
+      "Welcome to Sourceless! \n\n      Sourceless is a news-aggregation app that allows users to see trending topics and articles from around the world (top 10 stories/events), without users being able to bias towards a particular source BEFORE reading an article.\n\nCheers from your unbiased developers,\n\nDouglas Balkin\nTamara Tangney\nAlex Carver\nKatie McCarthy (PULL MASTER)\n\n\n\ Sourceless\n https://mccarthinator.github.io/sourceLess",
       "smtp.gmail.com",
       "sourceless7@gmail.com",
       "7Sourceless");
